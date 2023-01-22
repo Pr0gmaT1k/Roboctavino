@@ -43,14 +43,20 @@ class SlidesTools {
     return screenshots;
   }
 
-  static modify(units, addr, incident, color, background, presentationId) {
+  static modify(units, addr, incident, color, is81, is82, background, presentationId) {
+    Logger.log([units, addr, incident, color, is81, is82, background, presentationId])
     let presentation = SlidesApp.openById(presentationId)
     let twitterPage = presentation.getSlides()[0]
     twitterPage.getBackground().setPictureFill(background)
-    let unitShape = twitterPage.getPageElementById('g155fb66c696_0_8').asShape()
-    let keyShape = twitterPage.getPageElementById('i0').asShape()
-    let adressShape = twitterPage.getPageElementById('i1').asShape()
-    let socialShape = twitterPage.getPageElementById('g155fb66c696_0_5').asShape()
+    let unitImage = twitterPage.getPageElementById(UNIT_IMAGE_ID).asImage()
+    let mapImage = twitterPage.getPageElementById(MAP_IMAGE_ID).asImage()
+    let unitShape = twitterPage.getPageElementById(UNIT_SHAPE_ID).asShape()
+    let keyShape = twitterPage.getPageElementById(KEY_SHAPE_ID).asShape()
+    let adressShape = twitterPage.getPageElementById(ADRESS_SHAPE_ID).asShape()
+    let socialShape = twitterPage.getPageElementById(SOCIAL_SHAPE_ID).asShape()
+    let unitImageBlob = is81 || is82 ? is81 ? IMAGE_81 : IMAGE_82 : IMAGE_EMPTY_TRANSPARENT
+    unitImage.replace(unitImageBlob, true)
+    mapImage.replace(is81 || is82 ? background : IMAGE_EMPTY_TRANSPARENT, true)
     unitShape.getFill().setSolidFill(color)
     keyShape.getFill().setSolidFill(color)
     adressShape.getFill().setSolidFill(color)
@@ -60,8 +66,8 @@ class SlidesTools {
     adressShape.getText().setText(addr)
     presentation.saveAndClose()
     //presentation.getSlides()[0].getPageElements().forEach(function (pageElement, index) {
-    //  Logger.log(pageElement.getObjectId())
-    //  Logger.log(pageElement.getPageElementType())
+      //Logger.log(pageElement.getObjectId())
+      //Logger.log(pageElement.getPageElementType())
     //})
   }
 }

@@ -20,7 +20,8 @@
 
 
 // TWITTER
-// CONFIDENTIAL! DO NOT PUBLISH
+let CENTRAL_ACCOUNT = ''
+let STATION_ACCOUNT = ''
 let CONSUMER_KEY = '';
 let CONSUMER_SECRET = '';
 let TOKEN = '';
@@ -28,14 +29,19 @@ let TOKEN_SECRET = '';
 var service;
 
 // SLIDES
-// CONFIDENTIAL! DO NOT PUBLISH
-let slideID = ""
+let SLIDE_ID = ""
+let UNIT_SHAPE_ID = ''
+let KEY_SHAPE_ID = ''
+let ADRESS_SHAPE_ID = ''
+let SOCIAL_SHAPE_ID = ''
+let MAP_IMAGE_ID = ''
+let UNIT_IMAGE_ID = ''
 
 // GOOGLE DRIVE
-// CONFIDENTIAL! DO NOT PUBLISH
-let image81 = DriveApp.getFileById('')
-let image8182 = image81
-let image82 = DriveApp.getFileById('')
+let IMAGE_81 = DriveApp.getFileById('')
+let IMAGE_82 = DriveApp.getFileById('')
+let IMAGE_EMPTY_TRANSPARENT = DriveApp.getFileById('')
+let IMAGE_81_82 = IMAGE_82
 
 // CBV KEYS
 let emergencyKeysTable = {
