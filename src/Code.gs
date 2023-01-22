@@ -24,15 +24,15 @@
  */
 function main() {
   service = TwitterTools.getService();
-  let centralTweets = TwitterTools.getLastTweet('CentralCBV', 2) // SHOULD BE CONSTANT
+  let centralTweets = TwitterTools.getLastTweet(CENTRAL_ACCOUNT, 2)
   if (centralTweets.length > 0) {
-    let robotTweet = TwitterTools.getLastTweet('Zbiouw', 3) // SHOULD BE CONSTANT
+    let robotTweet = TwitterTools.getLastTweet(STATION_ACCOUNT, 3)
     let alreadyQuoted = [... new Set(robotTweet.map(x => x['referenced_tweets'].map(y => y['id'])).flat())]
     let filtered = centralTweets.filter(x => alreadyQuoted.includes(x['id']) == false && x.text.split("*").length == 3).reverse()
     for (const toTweet of filtered) {
       let datas = extractDataFrom(toTweet.text)
       Logger.log(datas)
-      TwitterTools.publish(datas[0], toTweet['id'], [TwitterTools.generateMediaIdsFrom(datas[1], datas[2], datas[3], datas[4], MapsTools.getMapImageFrom(datas[7]), slideID)]);
+      TwitterTools.publish(datas[0], toTweet['id'], [TwitterTools.generateMediaIdsFrom(datas[1], datas[2], datas[3], datas[4], datas[5], datas[6], MapsTools.getMapImageFrom(datas[7]), SLIDE_ID)]);
     }
   }
 }
