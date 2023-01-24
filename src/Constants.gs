@@ -61,7 +61,7 @@ let emergencyKeysTable = {
   'CLAVE 4-4': ['a una emergencia con materiales peligrosos', '#aa00ff', 'Emergencia con materiales peligrosos', '#Bomberos #Valparaíso #HazMat'],
   'CLAVE 5-1': ['a un rescate vehicular simple', '#304ffe', 'Rescate vehicular simple', '#Bomberos #Valparaíso #AccidenteDeTránsito'],
   'CLAVE 5-2': ['a un rescate vehicular complejo', '#304ffe', 'Rescate vehicular complejo', '#Bomberos #Valparaíso #AccidenteDeTránsito'],
-  'CLAVE 5-2': ['a un rescate vehicular en túnel', '#304ffe', 'Rescate vehicular en túnel', '#Bomberos #Valparaíso #AccidenteDeTránsito'],
+  'CLAVE 5-3': ['a un rescate vehicular en túnel', '#304ffe', 'Rescate vehicular en túnel', '#Bomberos #Valparaíso #AccidenteDeTránsito'],
   'CLAVE 6-1': ['a un rescate', '#00c853', 'Rescate', '#Bomberos #Valparaíso #Rescate'],
   'CLAVE 6-2': ['a un rescate en desnivel', '#00c853', 'Rescate en desnivel', '#Bomberos #Valparaíso #Rescate'],
   'CLAVE 6-3': ['a un rescate en altura', '#00c853', 'Rescate en altura', '#Bomberos #Valparaíso #Rescate'],
