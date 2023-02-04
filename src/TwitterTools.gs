@@ -76,7 +76,7 @@ class TwitterTools {
   }
 
   static generateMediaIdsFrom(units, addr, incident, color, is81, is82, background, slideID) {
-    SlidesTools.modify(units, addr, incident, color, is81, is82, background, slideID)
+   SlidesTools.modify(units, addr, incident, color, is81, is82, background, slideID)
    return TwitterTools.upload(SlidesTools.generateScreenshots(slideID))
   }
 
