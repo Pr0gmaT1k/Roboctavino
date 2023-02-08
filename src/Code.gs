@@ -27,7 +27,7 @@ function main() {
   let centralTweets = TwitterTools.getLastTweet(CENTRAL_ACCOUNT, 2)
   if (centralTweets.length > 0) {
     let robotTweet = TwitterTools.getLastTweet(STATION_ACCOUNT, 3)
-    let alreadyQuoted = [... new Set(robotTweet.map(x => x['referenced_tweets'].map(y => y['id'])).flat())]
+    let alreadyQuoted = [... new Set(robotTweet.filter(x => x['referenced_tweets'] != null).map(x => x['referenced_tweets'].map(y => y['id'])).flat())]
     let filtered = centralTweets.filter(x => alreadyQuoted.includes(x['id']) == false && x.text.split("*").length == 3).reverse()
     for (const toTweet of filtered) {
       let datas = extractDataFrom(toTweet.text)
